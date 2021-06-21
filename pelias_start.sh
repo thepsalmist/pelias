@@ -8,7 +8,7 @@ cd /path/to/install
 
 
 # clone this repository
-git clone https://github.com/pelias/docker.git && cd docker
+git clone https://github.com/thepsalmist/pelias.git
 
 # install pelias script
 # this is the _only_ setup command that should require `sudo`

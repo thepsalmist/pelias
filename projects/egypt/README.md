@@ -18,18 +18,22 @@ Please ensure that's all working fine before continuing.
 
 # Run a Build
 
-To run a complete build, execute the following commands:
+To run a complete build, execute the following commands from the starter script:
 
 ```bash
-sudo chmod +x pelias.sh
+sudo chmod +x pelias_start.sh
 
-./pelias.sh
+./pelias_start.sh
 ```
 
 # Test API endponints
 
 You can now make queries against your new Pelias build:
 
-Forward Geocoding http://localhost:4000/v1/search?text=900 park street, tshwane, south africa
+Forward Geocoding
+
+    http://localhost:4000/v1/search?text=El-Gomhoreya Square, Rahbet Abdin, Abdeen, Cairo Governorate, Egypt
 
 Reverse Geocoding
+
+    http://localhost:4000/v1/reverse?point.lon=30.043244015517843&point.lat=31.25082177662669
