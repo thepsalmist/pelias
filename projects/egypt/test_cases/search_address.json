@@ -1,0 +1,67 @@
+{
+    "name": "/v1/search address",
+    "description": "addresses in Egypt, EG",
+    "priorityThresh": 1,
+    "normalizers": {
+      "name": [
+        "toUpperCase",
+        "removeOrdinals",
+        "stripPunctuation",
+        "abbreviateDirectionals",
+        "abbreviateStreetSuffixes"
+      ]
+    },
+    "tests": [
+      {
+        "id": 1,
+        "status": "pass",
+        "in": {
+          "text": "15 Mahmoud Azmy St., ZAMALEK"
+        },
+        "expected": {
+          "properties": [
+            {
+              "street": "Mahmoud Azmy St.",
+              "housenumber": "15",
+          "region": "ZAMALEK"
+            }
+          ]
+        }
+      },
+     {
+        "id": 2,
+        "status": "pass",
+        "in": {
+          "text": "6 El-Selsouli St., Garden City"
+        },
+        "expected": {
+          "properties": [
+            {
+              "name": "6 El-Selsouli St., Garden City",
+          "housenumber": "6",
+          "region": "Cairo",
+          "country": "Egypt"
+            }
+          ]
+        }
+      },
+   {
+        "id": 3,
+        "status": "pass",
+        "in": {
+          "text": "1 Bustan St., El-Tahrir Sq"
+        },
+        "expected": {
+          "properties": [
+            {
+              "name": "1 Bustan St., El-Tahrir Sq",
+              "housenumber": "1",
+          "region": "Cairo"
+            }
+          ]
+        }
+      }
+  
+  
+    ]
+  }

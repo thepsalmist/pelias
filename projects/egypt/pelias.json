@@ -1,0 +1,77 @@
+{
+    "logger": {
+      "level": "info",
+      "timestamp": false
+    },
+    "esclient": {
+      "apiVersion": "7.5",
+      "hosts": [
+        { "host": "elasticsearch" }
+      ]
+    },
+    "elasticsearch": {
+      "settings": {
+        "index": {
+          "refresh_interval": "10s",
+          "number_of_replicas": "0",
+          "number_of_shards": "3"
+        }
+      }
+    },
+    "acceptance-tests": {
+      "endpoints": {
+        "docker": "http://api:4000/v1/"
+      }
+    },
+    "api": {
+      "services": {
+        "placeholder": { "url": "http://placeholder:4100" },
+        "pip": { "url": "http://pip:4200" },
+        "interpolation": { "url": "http://interpolation:4300" },
+        "libpostal": { "url": "http://libpostal:4400" }
+      }
+    },
+    "imports": {
+      "adminLookup": {
+        "enabled": true
+      },
+      "geonames": {
+        "datapath": "/data/geonames",
+        "countryCode": "EG"
+      },
+      "openstreetmap": {
+        "download": [
+          { "sourceURL": "https://download.geofabrik.de/africa/egypt-latest.osm.pbf" }
+         
+        ],
+        "leveldbpath": "/tmp",
+        "datapath": "/data/openstreetmap",
+        "import": [{
+          "filename": "egypt-latest.osm.pbf"
+        }]
+      },
+      "polyline": {
+        "datapath": "/data/polylines",
+        "files": [ "extract.0sv" ]
+      },
+      "whosonfirst": {
+        "datapath": "/data/whosonfirst",
+        "countryCode": "EG",
+        "importPostalcodes": true,
+        "importPlace": [
+          "85632793"
+        ]
+      },
+      "interpolation": {
+        "download": {
+          "tiger": {
+            "datapath": "/data/tiger",
+            "states": [
+              { "state_code": 53, "county_code": 11, "name": "Clark County, WA" }
+            ]
+          }
+        }
+      }
+    }
+  }
+  

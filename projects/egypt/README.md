@@ -1,6 +1,12 @@
-# South Africa
+# Egypt
 
-This project is configured to download/prepare/build a complete Pelias installation for South Africa.
+This project is configured to download/prepare/build a complete Pelias installation for Egypt.
+
+# Prerequisites
+
+Docker installed - [install docker ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+
+Docker Compose - [install docker compose ](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
 
 # Setup
 
@@ -15,24 +21,15 @@ Please ensure that's all working fine before continuing.
 To run a complete build, execute the following commands:
 
 ```bash
-pelias compose pull
-pelias elastic start
-pelias elastic wait
-pelias elastic create
-pelias download all
-pelias prepare all
-pelias import all
-pelias compose up
+sudo chmod +x pelias.sh
+
+./pelias.sh
 ```
 
-# Make an Example Query
+# Test API endponints
 
 You can now make queries against your new Pelias build:
 
-Forward Geocoding
-
-    http://localhost:4000/v1/search?text=El-Gomhoreya Square, Rahbet Abdin, Abdeen, Cairo Governorate, Egypt
+Forward Geocoding http://localhost:4000/v1/search?text=900 park street, tshwane, south africa
 
 Reverse Geocoding
-
-    http://localhost:4000/v1/reverse?point.lon=30.043244015517843&point.lat=31.25082177662669
