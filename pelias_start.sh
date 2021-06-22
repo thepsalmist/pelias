@@ -1,14 +1,14 @@
 #!/bin/bash
 set -x
 
-# change directory to the where you would like to install Pelias
+# change directory to the where you would like to install Pelias - The directory where you want to clone the pelias repo on your local computer
 # Example cd /home/user/Documents/pelias
 cd /path/to/install
 
 
 
 # clone this repository
-git clone https://github.com/thepsalmist/pelias.git
+git clone https://github.com/thepsalmist/pelias.git && cd pelias
 
 # install pelias script
 # this is the _only_ setup command that should require `sudo`
