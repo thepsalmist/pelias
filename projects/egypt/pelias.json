@@ -50,6 +50,12 @@
           "filename": "egypt-latest.osm.pbf"
         }]
       },
+      "openaddresses": {
+        "datapath": "/data/openaddresses",
+        "files":[]
+    
+      },
+      
       "polyline": {
         "datapath": "/data/polylines",
         "files": [ "extract.0sv" ]
@@ -60,6 +66,11 @@
         "importPostalcodes": true,
         "importPlace": [
           "85632793"
+        ]
+      },
+      "transit": {
+        "datapath": "/data/transit",
+        "feeds": [
         ]
       },
       "interpolation": {
