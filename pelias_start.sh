@@ -15,7 +15,7 @@ git clone https://github.com/thepsalmist/pelias.git && cd pelias
 sudo ln -s "$(pwd)/pelias" /usr/local/bin/pelias
 
 # cd into the project directory
-cd projects/egypt
+cd projects/planet
 
 
 
@@ -27,6 +27,9 @@ sed -i '/DATA_DIR/d' .env
 echo 'DATA_DIR=./data' >> .env
 
 # run build
+git submodule init
+git submodule update
+
 pelias compose pull
 pelias elastic start
 pelias elastic wait
